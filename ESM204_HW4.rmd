@@ -9,3 +9,29 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(tidyverse)
+
+data <- read_csv("HW4Data.csv")
+
+```
+
+```{r}
+
+lm_A <- lm(MC_A ~ Abatement, data = data)
+lm_A
+
+lm_B <- lm(MC_B ~ Abatement, data = data)
+lm_B
+
+lm_C <- lm(MC_C ~ Abatement, data = data)
+lm_C
+
+lm_D <- lm(MC_D ~ Abatement, data = data)
+lm_D
+
+```
+
+
+
+
