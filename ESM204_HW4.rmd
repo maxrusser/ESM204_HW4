@@ -17,6 +17,7 @@ data <- read_csv("HW4Data.csv")
 ```
 
 ```{r}
+#Part 1.
 
 lm_A <- lm(MC_A ~ Abatement, data = data)
 lm_A
@@ -30,7 +31,36 @@ lm_C
 lm_D <- lm(MC_D ~ Abatement, data = data)
 lm_D
 
+#still need plots
+
 ```
+
+
+```{r}
+#Part 2. 
+
+#need to plug in each sector's emissions into their respective linear models to find intercept
+#need to find the slope of the MB for each sector using their respective emissions
+#we can use these to find the demand curve
+
+#Sector A
+
+-8.6445 + 0.5768 * 180
+
+A_dem <- function(x) 95.1795 - 0.528775 * x
+
+A_dem_plot <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)),aes(x = x, y = y)) +
+  stat_function(fun = A_dem, geom = "line", color = "blue") +
+  scale_x_continuous(expand = c(0,0), limits = c(0,200)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,100))
+
+A_dem_plot
+
+
+
+
+```
+
 
 
 
